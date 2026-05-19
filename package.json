@@ -1,6 +1,6 @@
 {
   "name": "@rific/timer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Animated SVG progress ring timer for React Native",
   "keywords": [
     "react-native",
