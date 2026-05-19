@@ -1,17 +1,17 @@
-# @rific/react-native-timer
+# @rific/timer
 
 Animated SVG progress ring timer for React Native.
 
 ## Installation
 
 ```sh
-npm install @rific/react-native-timer react-native-svg
+npm install @rific/timer react-native-svg
 ```
 
 ## Usage
 
 ```tsx
-import { Timer } from '@rific/react-native-timer'
+import { Timer } from '@rific/timer'
 import { Text } from 'react-native'
 
 const [started, setStarted] = useState<string | null>(null)
