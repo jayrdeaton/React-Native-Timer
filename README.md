@@ -51,6 +51,6 @@ Pass an ISO timestamp string to `started` to begin the countdown. Set `started` 
 
 ## Peer dependencies
 
-- `react >= 17.0.0`
-- `react-native >= 0.70.0`
+- `react >= 18.0.0`
+- `react-native >= 0.76.0`
 - `react-native-svg >= 13.0.0`
