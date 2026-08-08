@@ -3,6 +3,7 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src'],
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.claude/worktrees/'],
   moduleNameMapper: {
     '^react-native-svg$': '<rootDir>/src/__mocks__/react-native-svg.ts',
     '^react-native$': '<rootDir>/src/__mocks__/react-native.ts'
