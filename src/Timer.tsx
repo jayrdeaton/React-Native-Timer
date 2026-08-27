@@ -1,4 +1,4 @@
-import { type ReactNode, useCallback, useEffect, useRef } from 'react'
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { Animated, Easing, StyleSheet, View, ViewStyle } from 'react-native'
 import Svg, { Circle, G } from 'react-native-svg'
 
@@ -24,7 +24,7 @@ export const Timer = ({ children, color, duration, onStart, onStop, radius, star
   const progressRef = useRef(startProgress)
   const startedRef = useRef<string | null>(null)
   const circumference = 2 * Math.PI * radius
-  const animation = useRef(new Animated.Value(0)).current
+  const [animation] = useState(() => new Animated.Value(0))
   const animatedProps = {
     strokeDashoffset: animation.interpolate({
       inputRange: [0, 1],
