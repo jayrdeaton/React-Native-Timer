@@ -60,6 +60,7 @@ describe('Timer', () => {
 
   it('accepts custom width and style without throwing', () => {
     expect(() => {
+      // eslint-disable-next-line react-native/no-inline-styles
       render(<Timer color='#6200ee' duration={10} radius={30} started={null} width={8} style={{ opacity: 0.8 }} />)
     }).not.toThrow()
   })
