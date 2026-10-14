@@ -48,20 +48,20 @@ src/
 
 ### How it works
 
-Driven by React Native's built-in `Animated` API (not Reanimated) — a single `Animated.Value` interpolated from `[0, 1]` to `[circumference, 0]` and fed to an `AnimatedCircle`'s `strokeDashoffset`, so the ring draws itself as the value advances.
+Driven by React Native's built-in `Animated` API (not Reanimated) - a single `Animated.Value` interpolated from `[0, 1]` to `[circumference, 0]` and fed to an `AnimatedCircle`'s `strokeDashoffset`, so the ring draws itself as the value advances.
 
 One `useEffect` compares `started`/`duration`/`startProgress` against refs holding their previous values:
 - `duration === 0`, or `started` is falsy → `stopTimer()` (stop in place, spring back to 0)
 - `started` is truthy and any of the three changed → `animation.stopAnimation(() => startTimer())`
 
-`startTimer` clamps `startProgress` to `[0, 1]`, jumps the animated value straight to that clamped progress (`animation.setValue`), computes the remaining duration as `(1 - clampedProgress) * duration * 1000`ms, then runs `Animated.timing` with `Easing.linear` over that remaining span — so resuming from a nonzero `startProgress` takes proportionally less time, not the full `duration`. `onStart` fires synchronously when `startTimer` runs; `onStop` fires from the animation's completion callback only if it finished naturally (not on manual stop).
+`startTimer` clamps `startProgress` to `[0, 1]`, jumps the animated value straight to that clamped progress (`animation.setValue`), computes the remaining duration as `(1 - clampedProgress) * duration * 1000`ms, then runs `Animated.timing` with `Easing.linear` over that remaining span - so resuming from a nonzero `startProgress` takes proportionally less time, not the full `duration`. `onStart` fires synchronously when `startTimer` runs; `onStop` fires from the animation's completion callback only if it finished naturally (not on manual stop).
 
 ## Public API
 
 From `src/index.ts`:
 
-- `Timer` — the component (`color`, `duration`, `radius`, `started` required; `children`, `onStart`, `onStop`, `startProgress`, `style`, `width` optional)
-- `TimerProps` (type only) — its props shape
+- `Timer` - the component (`color`, `duration`, `radius`, `started` required; `children`, `onStart`, `onStop`, `startProgress`, `style`, `width` optional)
+- `TimerProps` (type only) - its props shape
 
 ## Peer Dependencies
 
@@ -86,13 +86,13 @@ Enforced by ESLint + Prettier, run `npm run lint` before finishing any task.
 - Print width: 1000 (effectively disabled)
 
 **ESLint rules (warnings unless noted):**
-- `simple-import-sort` — imports and exports must be sorted
-- `react-native/no-inline-styles` — no inline style objects
-- `react-native/no-unused-styles` — no unused StyleSheet entries
-- `no-console` — no console statements
-- `@typescript-eslint/no-unused-vars` — `_`-prefixed vars/args/caught errors are exempt
-- `react-hooks/rules-of-hooks` — error, not a warning
+- `simple-import-sort` - imports and exports must be sorted
+- `react-native/no-inline-styles` - no inline style objects
+- `react-native/no-unused-styles` - no unused StyleSheet entries
+- `no-console` - no console statements
+- `@typescript-eslint/no-unused-vars` - `_`-prefixed vars/args/caught errors are exempt
+- `react-hooks/rules-of-hooks` - error, not a warning
 - `react-hooks/exhaustive-deps`, `react-hooks/refs`, `react-hooks/immutability`, `react-hooks/preserve-manual-memoization`, `react-hooks/set-state-in-effect`
-- `package-json/order-properties`, `package-json/sort-collections` — on `package.json` itself
+- `package-json/order-properties`, `package-json/sort-collections` - on `package.json` itself
 
-`eslint.config.cjs` is a bare `require('@infinitetoken/eslint-config/react-native')` — no local overrides. `src/__mocks__` and `src/__tests__` are linted normally (not excluded).
+`eslint.config.cjs` is a bare `require('@infinitetoken/eslint-config/react-native')` - no local overrides. `src/__mocks__` and `src/__tests__` are linted normally (not excluded).

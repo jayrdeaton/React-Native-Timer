@@ -34,14 +34,14 @@ const [started, setStarted] = useState<string | null>(null)
 
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
-| `color` | `string` | ✓ | — | Stroke color of the progress ring |
-| `duration` | `number` | ✓ | — | Timer duration in seconds |
-| `radius` | `number` | ✓ | — | Radius of the SVG ring in pixels |
-| `started` | `string \| null` | ✓ | — | ISO timestamp when the timer started; `null` to stop |
+| `color` | `string` | ✓ | - | Stroke color of the progress ring |
+| `duration` | `number` | ✓ | - | Timer duration in seconds |
+| `radius` | `number` | ✓ | - | Radius of the SVG ring in pixels |
+| `started` | `string \| null` | ✓ | - | ISO timestamp when the timer started; `null` to stop |
 | `children` | `ReactNode` | | `undefined` | Rendered in the center of the ring |
 | `onStart` | `() => void` | | `undefined` | Called when the timer starts |
 | `onStop` | `() => void` | | `undefined` | Called when the timer reaches 100% |
-| `startProgress` | `number` | | `0` | Starting progress (0–1) |
+| `startProgress` | `number` | | `0` | Starting progress (0-1) |
 | `style` | `ViewStyle` | | `undefined` | Style applied to the container |
 | `width` | `number` | | `6` | Stroke width of the ring |
 
