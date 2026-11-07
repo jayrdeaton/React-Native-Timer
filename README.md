@@ -2,6 +2,8 @@
 
 Animated SVG progress ring timer for React Native.
 
+**[Overview](https://rific.jaydeaton.com/packages/timer)**: an info page in the Expo Starter showcase, since this is an optional package with no runnable demo there.
+
 ## Installation
 
 ```sh
