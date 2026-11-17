@@ -56,3 +56,7 @@ Pass an ISO timestamp string to `started` to begin the countdown. Set `started` 
 - `react >= 18.0.0`
 - `react-native >= 0.76.0`
 - `react-native-svg >= 13.0.0`
+
+---
+
+Made by [Infinite Token](https://www.infinitetoken.com), the team behind [Lumber](https://lumber.infinitetoken.com): end-to-end encrypted logging.
